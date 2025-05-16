@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  backend:
+    build: .
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - FLASK_ENV=${FLASK_ENV}
+      - SECRET_KEY=${SECRET_KEY}
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app                  # Sync project folder with container's /app directory
+      - ./.venv:/app/.venv      # Bind mount local .venv to container's .venv for Python env consistency
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongo_data:/data/db     # Persist MongoDB data on the host
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongo_data:

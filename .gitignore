@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# VS Code settings
+.vscode/
+
+# Docker files
+*.log
+docker-compose.override.yml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+htmlcov/
+.coverage
+.cache
+
+# SQLite (if ever used)
+*.sqlite3
+
+# Test / temp files
+*.tmp
+*.bak
+*.swp
